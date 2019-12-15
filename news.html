@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="download.ico" />
+    <title>Know IT</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background: url("main_bg.jpg");
+      }
+      header {
+        position: fixed;
+        width: 100%;
+        z-index: 200;
+      }
+      .container {
+        width: 1170px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .top-wrapper {
+        padding-top: 180px;
+        padding-bottom: 100px;
+        color: rgb(17, 12, 12);
+        font-weight: bold;
+        background-image: url("bg_1.png");
+        background-size: cover;
+        margin: 0 auto;
+    width: 86%;
+      }
+      .top-wrapper h1 {
+        font-size: 45px;
+        letter-spacing: 5px;
+        margin-bottom: 10px;
+      }
+      .nav-item {
+        margin-right: 10px;
+        margin-left: 20px;
+      }
+      .nav-item:hover {
+        background-color: black;
+        border-radius: 8px;
+      }
+      .search-news {
+        position: relative;
+      }
+      .top-text {
+        background-color: gainsboro;
+        font-weight: bold;
+        opacity: 0.8;
+      }
+      .container {
+        padding: 20px 20px;
+        margin: 0 auto;
+      }
+      .news-genres {
+        background-color: ghostwhite;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .news-output {
+        background-color: ghostwhite;
+        margin-bottom: 20px;
+      }
+      .evaluate-truth {
+        background-color: ghostwhite;
+        margin: 0 auto;
+        padding: 20px 20px;
+      }
+      .card {
+        margin: 0 auto;
+        background-color: bisque;
+        width: 30%;
+      }
+      #unveil-im-id {
+        width: 100%;
+      }
+      .unveil {
+        display: flex;
+      }
+      .quote-right p {
+        font-weight: 500;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header_ bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand text-center" href="news.html">
+          <img
+            src="download.ico"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt="know_it"
+          />
+          KNOW IT
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link font-weight-bold" href="news.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">TRENDING</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#news-genre-id">Genre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#unveil-truth-id">Unveil the TRUTH</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="search-news pt-1">
+        <form class="form" id="myForm" method="submit">
+          <div class="input-group  pb-3 pl-3 pr-3">
+            <input
+              type="text"
+              class="form-control myForm"
+              placeholder="Search the news you wanna know..."
+              id="dataInput"
+            />
+          </div>
+        </form>
+      </div>
+    </header>
+
+    <div class="top-wrapper">
+      <div class="container">
+        <h1>
+          <span class=" top-text p-2 mb-2 text-dark">Truth!!</span>
+        </h1>
+        <h3>
+          <span class=" top-text p-2 mb-1 text-dark"
+            >Is it what you wanna know????</span
+          >
+        </h3>
+      </div>
+    </div>
+
+    <div class="container news-genres" id="news-genre-id">
+      <h1 class="heading genre-heading text-center">GENRES</h1>
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="health.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">HEALTH</h5>
+            <p class="card-text">
+              Healthline News reports on emerging research, new treatments,
+              diet, exercise, and trending topics in health and wellness. All
+              articles are written by our network of editors and contributors.
+              Everything we publish is fact checked by our panel of experts.
+            </p>
+            <button type="button" class="btn btn-link text-dark font-weight-bold">HEALTH WORLD</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="business.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">BUSINESS</h5>
+            <p class="card-text">
+              Sometimes when you innovate, you make mistakes. It is best to
+              admit them quickly, and get on with improving your other
+              innovations. 
+            </p>
+            <button type="button" class="btn btn-link text-dark font-weight-bold">BUSINESS WORLD</button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="sports.jpg" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">SPORTS</h5>
+            <p class="card-text">
+              There may be people that have more talent than you, but there’s no
+              excuse for anyone to work harder than you do.
+            </p>
+            <button type="button" class="btn btn-link text-dark font-weight-bold">SPORTS WORLD</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container news-output">
+      <h1 class="heading search-heading text-center mt-3 mb-3 mr-3 ml-3">
+        SEARCH RESULTS
+      </h1>
+      <div class="row search-result"></div>
+    </div>
+
+    <div class=" container evaluate-truth" id="unveil-truth-id">
+      <h1 class="heading evaluate-heading text-center mt-3 mb-3 mr-3 ml-3">
+        Unveil the TRUTH
+      </h1>
+      <div class="unveil">
+        <div class="left-unveil">
+          <img src="fakenews1.jpg" id="unveil-im-id" />
+        </div>
+        <div class="right-unveil pl-3">
+          <div class="quote-right">
+            <p>
+              In the age of technology there is constant access to vast amounts
+              of information. The basket overflows; people get overwhelmed; the
+              eye of the storm is not so much what goes on in the world, it is
+              the confusion of how to think, feel, digest, and react to what
+              goes on.
+            </p>
+          </div>
+          <div class="form-right">
+            <form class="form" method="submit">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control myForm"
+                  placeholder="Search the news you wanna evaluate..."
+                  id="truthInput"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</html>
