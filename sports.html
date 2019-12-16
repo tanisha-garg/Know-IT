@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="download.ico" />
+    <title>Know IT - Sports</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+         body {
+        background: url("main_bg.jpg");
+      }
+      header {
+        position: fixed;
+        width: 100%;
+        z-index: 200;
+      }
+        .container {
+        width: 1170px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: auto;
+        margin-right: auto;
+      
+      }
+      .news-output {
+        background-color: ghostwhite;
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+      .card {
+        margin: 0 auto;
+        background: linear-gradient(45deg, #fec180, #ff8993);
+        width: 30%;
+        animation-name: card-animation;
+        animation-duration: 3s;
+        border-radius: 10px;
+        border: 1px solid;
+        transition: 0.5s ease;
+        cursor: pointer;
+      }
+      .card:hover {
+        transform: scale(1.15);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+      }
+
+      @keyframes card-animation {
+        from {
+          background-color: bisque;
+        }
+        to {
+          background-color: grey;
+        }
+      }
+    </style>
+  </head>
+  <body>
+      
+    <header class="header_ bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand text-center" href="news.html">
+            <img
+              src="download.ico"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt="know_it"
+            />
+            KNOW IT
+          </a>
+  
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link font-weight-bold" href="news.html"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              
+            </ul>
+          </div>
+        </nav>
+       
+      </header>
+
+
+      <div class="container news-output">
+      <h1 class="heading search-heading text-center mt-5 mb-3 mr-3 ml-3">
+        Sports
+      </h1>
+      <div class="row search-result"></div>
+    </div>
+
+  </body>
+  <script src="scriptSports.js"></script>
+</html>
