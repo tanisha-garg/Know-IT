@@ -1,5 +1,5 @@
 const form = document.querySelector("#myForm");
-const API_KEY = "681bf93be2c44fc2992369f776d7504c";
+const API_KEY = "be0458bfedf54676aa4d58b3067e82ba";
 const serchRes = document.querySelector("#searchRes");
 const row = document.querySelector(".search-result");
 const disableForm = document.querySelector("#truthInput");
@@ -16,7 +16,7 @@ form.addEventListener("submit", e => {
 });
 
 const fetchNews = async text => {
-  const url = `https://newsapi.org/v2/everything?q=${text}&from=2019-11-15&sortBy=publishedAt&apiKey=${API_KEY}`;
+  const url = `https://newsapi.org/v2/everything?q=${text}&from=2019-11-16&sortBy=publishedAt&apiKey=${API_KEY}`;
   const newsData = await fetch(url);
   const news = await newsData.json();
   console.log(news);
