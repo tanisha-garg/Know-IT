@@ -12,6 +12,8 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
     <style>
       body {
         background: url("main_bg.jpg");
@@ -60,7 +62,7 @@
         opacity: 0.8;
       }
       .container {
-        padding: 20px 20px;
+        padding: 10px 25px;
         margin: 0 auto;
       }
       .news-genres {
@@ -75,8 +77,16 @@
       .search-result {
         display: flex;
       }
+      .video-wrapper {
+        background: linear-gradient(45deg,#fec180,#ff8993);
+        margin-bottom: 20px;
+      }
+      .list-group {
+        list-style: none;
+        padding: 20px 20px;
+      }
       .evaluate-truth {
-        background: linear-gradient(45deg,#fc7b7b,#A6c1ff);
+        background: linear-gradient(45deg, #fc7b7b, #a6c1ff);
         margin: 0 auto;
         padding: 20px 20px;
       }
@@ -108,11 +118,31 @@
         width: 86%;
         margin: 0 auto;
       }
+      .express-thoughts {
+        background-color: ghostwhite;
+        margin-bottom: 20px;
+      }
+      .form-control {
+        border-radius: 10px;
+        border: 2px solid;
+      }
+      .list-post-item {
+        background: linear-gradient(45deg, #f3dcfb, #679fe4);
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
       #truthInput:hover {
         cursor: not-allowed;
       }
       #unveil-im-id {
         width: 100%;
+        border: 1px solid;
+        transition: 0.5s ease;
+        cursor: pointer;
+      }
+      #unveil-im-id:hover {
+        transform: scale(1.15);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
       }
       .unveil {
         display: flex;
@@ -120,9 +150,15 @@
       .quote-right p {
         font-weight: 500;
       }
+      iframe {
+        display: block;
+        margin: 0 auto;
+      }
+
+    
     </style>
   </head>
-  <body>
+  <body onload="fetchPosts()">
     <header class="header_ bg-dark">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand text-center" href="news.html">
@@ -153,13 +189,13 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">TRENDING</a>
+              <a class="nav-link" href="#live-stream-id">LIVE STREAM</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#news-genre-id">Genre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Post News</a>
+              <a class="nav-link" href="#express-id">Post News</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#unveil-truth-id">COMING SOONNNN!!!</a>
@@ -168,7 +204,7 @@
         </div>
       </nav>
       <div class="search-news pt-1">
-        <form class="form" id="myForm" method="submit" action=".news-output">
+        <form class="form" id="myForm" method="submit">
           <div class="input-group  pb-3 pl-3 pr-3">
             <input
               type="text"
@@ -207,12 +243,14 @@
               articles are written by our network of editors and contributors.
               Everything we publish is fact checked by our panel of experts.
             </p>
-            <a href="health.html"><button
-              type="button"
-              class="btn btn-link text-dark font-weight-bold"
+            <a href="health.html"
+              ><button
+                type="button"
+                class="btn btn-link text-dark font-weight-bold"
+              >
+                HEALTH WORLD
+              </button></a
             >
-              HEALTH WORLD
-            </button></a>
           </div>
         </div>
         <div class="card">
@@ -224,12 +262,14 @@
               admit them quickly, and get on with improving your other
               innovations.
             </p>
-            <a href="business.html"><button
-              type="button"
-              class="btn btn-link text-dark font-weight-bold"
+            <a href="business.html"
+              ><button
+                type="button"
+                class="btn btn-link text-dark font-weight-bold"
+              >
+                BUSINESS WORLD
+              </button></a
             >
-              BUSINESS WORLD
-            </button></a>
           </div>
         </div>
         <div class="card">
@@ -240,18 +280,20 @@
               There may be people that have more talent than you, but there’s no
               excuse for anyone to work harder than you do.
             </p>
-            <a href="sports.html"><button
-              type="button"
-              class="btn btn-link text-dark font-weight-bold"
+            <a href="sports.html"
+              ><button
+                type="button"
+                class="btn btn-link text-dark font-weight-bold"
+              >
+                SPORTS WORLD
+              </button></a
             >
-              SPORTS WORLD
-            </button></a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container news-output">
+    <div class="container news-output" id="news-output-id">
       <h1 class="heading search-heading text-center mt-3 mb-3 mr-3 ml-3">
         Find your search results here
       </h1>
@@ -259,7 +301,45 @@
         <div class="container search-result"></div>
       </div>
       <div class="video-output" id="video-id"></div>
-    </div>   
+    </div>
+
+    <div class="container express-thoughts" id="express-id">
+      <h1 class="heading express-heading text-center mt-3 mb-3 mr-3 ml-3">
+        Express Your Thoughts
+      </h1>
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control post-input"
+          placeholder="What's on your mind???"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            id="post-button"
+          >
+            <strong>POST</strong>
+          </button>
+        </div>
+      </div>
+      <ul class="list-group list-group-flush"></ul>
+    </div>
+
+    <div class="container video-wrapper" id="live-stream-id">
+      <h1 class="text-center">LIVE STREAMING</h1>      
+      <div class="video-ytt mt-3 ">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/tP3lTtXhjoQ"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+   
+    </div>
 
     <div class=" container evaluate-truth" id="unveil-truth-id">
       <h1 class="heading evaluate-heading text-center mt-3 mb-3 mr-3 ml-3">
@@ -284,8 +364,8 @@
               <div class="input-group">
                 <input
                   type="text"
-                  class="form-control myForm"
-                  placeholder="Search the news you wanna evaluate..."
+                  class="form-control myForm font-weight-bold"
+                  placeholder="COMING SOON!!!!!!!!!!!"
                   id="truthInput"
                 />
               </div>
@@ -294,8 +374,10 @@
         </div>
       </div>
     </div>
+
   </body>
   <script src="script.js"></script>
+  <script src="post_blog.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </html>

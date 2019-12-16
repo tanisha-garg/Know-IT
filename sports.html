@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
     <style>
-         body {
+      body {
         background: url("main_bg.jpg");
       }
       header {
@@ -21,13 +21,12 @@
         width: 100%;
         z-index: 200;
       }
-        .container {
+      .container {
         width: 1170px;
         padding-left: 15px;
         padding-right: 15px;
         margin-left: auto;
         margin-right: auto;
-      
       }
       .news-output {
         background-color: ghostwhite;
@@ -61,51 +60,46 @@
     </style>
   </head>
   <body>
-      
     <header class="header_ bg-dark">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand text-center" href="news.html">
-            <img
-              src="download.ico"
-              width="30"
-              height="30"
-              class="d-inline-block align-top"
-              alt="know_it"
-            />
-            KNOW IT
-          </a>
-  
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link font-weight-bold" href="news.html"
-                  >Home <span class="sr-only">(current)</span></a
-                >
-              </li>
-              
-            </ul>
-          </div>
-        </nav>
-       
-      </header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand text-center" href="news.html">
+          <img
+            src="download.ico"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt="know_it"
+          />
+          KNOW IT
+        </a>
 
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="container news-output">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link font-weight-bold" href="news.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container news-output">
       <h1 class="heading search-heading text-center mt-5 mb-3 mr-3 ml-3">
         Sports
       </h1>
       <div class="row search-result"></div>
     </div>
-
   </body>
   <script src="scriptSports.js"></script>
 </html>
