@@ -2,6 +2,8 @@ const form = document.querySelector("#myForm");
 const API_KEY = "681bf93be2c44fc2992369f776d7504c";
 const serchRes = document.querySelector("#searchRes");
 const row = document.querySelector(".search-result");
+const disableForm = document.querySelector("#truthInput");
+disableForm.disabled = true;
 //serchRes.style.display = "none";
 
 form.addEventListener("submit", e => {
@@ -18,15 +20,15 @@ const fetchNews = async text => {
     console.log(news);
     
     let output = "";
-    for(let i=1;i<7;i++)
+    for(let i=1;i<5;i++)
     {
-        output += `<div class="container card col-md-3 mt-2 mr-2 mb-2">
+        output += `<div class="card col-md-3 mt-2 mr-2 mb-2">
         <img class="card-img-top" src="${news.articles[i].urlToImage}" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">${news.articles[i].title}</h5>
           <p class="card-text">${news.articles[i].content}</p>
           <p class="card-text"><small class="text-muted">${news.articles[i].author}</small></p>
-          <button type="button" class="btn btn-link text-dark font-weight-bold">READ IN DETAIL</button>
+          <a href="${news.articles[i].url}" target="_blank"><button type="button" class="btn btn-link text-dark font-weight-bold">READ IN DETAIL</button></a>
         </div>
       </div>` ;
       row.innerHTML = output;

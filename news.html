@@ -36,7 +36,7 @@
         background-image: url("bg_1.png");
         background-size: cover;
         margin: 0 auto;
-    width: 86%;
+        width: 86%;
       }
       .top-wrapper h1 {
         font-size: 45px;
@@ -72,15 +72,44 @@
         background-color: ghostwhite;
         margin-bottom: 20px;
       }
+      .search-result {
+        display: flex;
+      }
       .evaluate-truth {
-        background-color: ghostwhite;
+        background: linear-gradient(45deg,#fc7b7b,#A6c1ff);
         margin: 0 auto;
         padding: 20px 20px;
       }
       .card {
         margin: 0 auto;
-        background-color: bisque;
+        background: linear-gradient(45deg, #fec180, #ff8993);
         width: 30%;
+        animation-name: card-animation;
+        animation-duration: 3s;
+        border-radius: 10px;
+        border: 1px solid;
+        transition: 0.5s ease;
+        cursor: pointer;
+      }
+      .card:hover {
+        transform: scale(1.15);
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+      }
+
+      @keyframes card-animation {
+        from {
+          background-color: bisque;
+        }
+        to {
+          background-color: grey;
+        }
+      }
+      .card-deck {
+        width: 86%;
+        margin: 0 auto;
+      }
+      #truthInput:hover {
+        cursor: not-allowed;
       }
       #unveil-im-id {
         width: 100%;
@@ -130,13 +159,16 @@
               <a class="nav-link" href="#news-genre-id">Genre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#unveil-truth-id">Unveil the TRUTH</a>
+              <a class="nav-link" href="#">Post News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#unveil-truth-id">COMING SOONNNN!!!</a>
             </li>
           </ul>
         </div>
       </nav>
       <div class="search-news pt-1">
-        <form class="form" id="myForm" method="submit">
+        <form class="form" id="myForm" method="submit" action=".news-output">
           <div class="input-group  pb-3 pl-3 pr-3">
             <input
               type="text"
@@ -175,7 +207,12 @@
               articles are written by our network of editors and contributors.
               Everything we publish is fact checked by our panel of experts.
             </p>
-            <button type="button" class="btn btn-link text-dark font-weight-bold">HEALTH WORLD</button>
+            <a href="health.html"><button
+              type="button"
+              class="btn btn-link text-dark font-weight-bold"
+            >
+              HEALTH WORLD
+            </button></a>
           </div>
         </div>
         <div class="card">
@@ -185,9 +222,14 @@
             <p class="card-text">
               Sometimes when you innovate, you make mistakes. It is best to
               admit them quickly, and get on with improving your other
-              innovations. 
+              innovations.
             </p>
-            <button type="button" class="btn btn-link text-dark font-weight-bold">BUSINESS WORLD</button>
+            <a href="business.html"><button
+              type="button"
+              class="btn btn-link text-dark font-weight-bold"
+            >
+              BUSINESS WORLD
+            </button></a>
           </div>
         </div>
         <div class="card">
@@ -198,7 +240,12 @@
               There may be people that have more talent than you, but there’s no
               excuse for anyone to work harder than you do.
             </p>
-            <button type="button" class="btn btn-link text-dark font-weight-bold">SPORTS WORLD</button>
+            <a href="sports.html"><button
+              type="button"
+              class="btn btn-link text-dark font-weight-bold"
+            >
+              SPORTS WORLD
+            </button></a>
           </div>
         </div>
       </div>
@@ -206,10 +253,13 @@
 
     <div class="container news-output">
       <h1 class="heading search-heading text-center mt-3 mb-3 mr-3 ml-3">
-        SEARCH RESULTS
+        Find your search results here
       </h1>
-      <div class="row search-result"></div>
-    </div>
+      <div class="row">
+        <div class="container search-result"></div>
+      </div>
+      <div class="video-output" id="video-id"></div>
+    </div>   
 
     <div class=" container evaluate-truth" id="unveil-truth-id">
       <h1 class="heading evaluate-heading text-center mt-3 mb-3 mr-3 ml-3">
