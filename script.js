@@ -16,7 +16,7 @@ form.addEventListener("submit", e => {
 });
 
 const fetchNews = async text => {
-  const url = `https://newsapi.org/v2/everything?q=${text}&from=2019-11-21&sortBy=publishedAt&apiKey=${API_KEY}`;
+  const url = `https://newsapi.org/v2/everything?q={text}&from=2019-11-27&sortBy=publishedAt&apiKey=API_KEY${API_KEY}`;
   const newsData = await fetch(url);
   const news = await newsData.json();
   console.log(news);
